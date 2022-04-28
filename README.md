@@ -10,11 +10,11 @@ Plusieurs répertoires :
 
     * Database_sql_20180923
 
-        Un dump de la base originale au format **SQL** et une **capture d'écran** de la repérésentation graphique des tables
+        Un dump de la base originale au format **SQL** et une **capture d'écran** de la représentation graphique des tables.
 
     * Database_interface_20180923
 
-        Les fichiers originaux de l'interface web en php 5.3. Les instructions sur les infos à modifier se trouvent dans un fichier readme.txt (fichier original)
+        Les fichiers originaux de l'interface web en php 5.3. Les instructions sur les infos à modifier se trouvent dans un fichier readme.txt (fichier original).
 
 
     * Docker_stack
@@ -25,10 +25,10 @@ Plusieurs répertoires :
         Il faut :
 
             1. Lancer la pile Docker (fichier 'indonesia.sh' en ayant prit soin de modifier les chemins vers l'interface
-            2. Dumper la base présente dans le répertoire (instruction dans le fichier 'Readme' de ce répertoire, notamment pour obtenir le mot de passe 'mysql'
-            3. modifier le fichier i_dbase.php' du répertoire 'Database_sql_20180923' avec le bon mot de passe mysql
+            2. Dumper la base présente dans le répertoire (instruction dans le fichier 'Readme' de ce répertoire, notamment pour obtenir le mot de passe 'mysql'.
+            3. modifier le fichier i_dbase.php' du répertoire 'Database_sql_20180923' avec le bon mot de passe mysql.
             
-    C'est complexe, mais c'est là seule façon que j'ai trouvé pour pouvoir lire les fichiers originaux.
+    C'est complexe, mais c'est là seule façon que j'ai trouvé pour pouvoir lire les fichiers originaux (et pour avoir recherché sur différents forum et poser la question sur des liste de diffusion métiers, il n'y a pas vraiment d'autres solutions).
 
 * **2022-04_DB_scheme**
 
