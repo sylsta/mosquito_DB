@@ -2,7 +2,7 @@
 
 Plusieurs répertoires :
 
-*  legacy
+*  **legacy**
 
     Toutes les documents en lien avec la première version de la base. Ce sont tous les documents fournis par Roger (aucun n'a été modifié) ainsi que la pile Docker nécessaire à leur fonctionnement.
 
@@ -30,8 +30,14 @@ Plusieurs répertoires :
             
     C'est complexe, mais c'est là seule façon que j'ai trouvé pour pouvoir lire les fichiers originaux.
 
-* 2022-04_DB_scheme
+* **2022-04_DB_scheme**
 
     Le projet de structure de la nouvelle base de données. Il s'agit d'un premier jet réalisé avec Roger. Il manque à ce jour les aspects 'SHS' ainsi que la/les tables pour l'intégration des documents multimédias (photos, vidéos, sons, etc). La structure est par ailleur sans doute très perfectible. 
 
     Elle est disponible sous trois formats : **sql** (ouvrable avec un éditeur texte) **dmb** (ouvrable avec pgmodeler - [https://pgmodeler.io/](URL) - outil de conception de base de données postGRES/postGIS) **png** (capture d'écran de la structure sous pgmodeler, ouvrable avec n'importe quelle visionneuse d'image)
+
+* **2022-04-21_interface**
+
+    Des essais d'interface sous Qt, ouvrables avec QT Designer par exemple (https://www.qt.io/). 
+
+    Il faut les considérer comme moins qu'un premier jet, à peine comme un brouillon. D'ailleurs, personnellement, j'aurais préféré que l'on fasse cette étape **après avoir terminé la définition de la structure**. Et **d'abord sur papier**, en commençant par un schéma de succesion des formulaires de l'interface, avant même de réfléchir au design même de celle-ci (charue, boeufs, etc). La pratique n'est donc pas du tout académique, et doit être IMHO totalement repensée. 
