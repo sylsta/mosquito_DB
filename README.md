@@ -1,4 +1,4 @@
-# mosquitoe_DB
+# mosquito_DB
 
 Plusieurs répertoires :
 
