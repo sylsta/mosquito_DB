@@ -1,0 +1,22 @@
+[Tue Apr 19 12:08:27.129836 2022] [mpm_prefork:notice] [pid 433] AH00163: Apache/2.4.7 (Ubuntu) PHP/5.5.9-1ubuntu4.29 configured -- resuming normal operations
+[Tue Apr 19 12:08:27.129891 2022] [core:notice] [pid 433] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Tue Apr 19 12:09:02.749771 2022] [:error] [pid 681] [client 172.17.0.1:44832] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: YES) in /var/www/html/i_dbase.php on line 2
+[Tue Apr 19 12:14:56.842509 2022] [:error] [pid 686] [client 172.17.0.1:44926] PHP Notice:  Undefined index: start in /var/www/html/index.php on line 398
+[Tue Apr 19 12:14:56.842549 2022] [:error] [pid 686] [client 172.17.0.1:44926] PHP Notice:  Undefined index: valida in /var/www/html/index.php on line 399
+[Tue Apr 19 12:20:51.380601 2022] [mpm_prefork:notice] [pid 433] AH00169: caught SIGTERM, shutting down
+[Tue Apr 19 12:23:04.690755 2022] [mpm_prefork:notice] [pid 434] AH00163: Apache/2.4.7 (Ubuntu) PHP/5.5.9-1ubuntu4.29 configured -- resuming normal operations
+[Tue Apr 19 12:23:04.690804 2022] [core:notice] [pid 434] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Tue Apr 19 12:23:06.845296 2022] [:error] [pid 661] [client 172.17.0.1:45140] PHP Warning:  mysql_connect(): Access denied for user 'admin'@'localhost' (using password: YES) in /var/www/html/i_dbase.php on line 2
+[Tue Apr 19 12:28:49.111508 2022] [:error] [pid 665] [client 172.17.0.1:45278] PHP Warning:  mysql_connect(): Access denied for user 'admin'@'localhost' (using password: YES) in /var/www/html/i_dbase.php on line 2
+[Tue Apr 19 12:29:24.944913 2022] [:error] [pid 666] [client 172.17.0.1:45282] PHP Notice:  Undefined index: start in /var/www/html/index.php on line 398
+[Tue Apr 19 12:29:24.944967 2022] [:error] [pid 666] [client 172.17.0.1:45282] PHP Notice:  Undefined index: valida in /var/www/html/index.php on line 399
+[Tue Apr 19 12:30:28.754680 2022] [:error] [pid 824] [client 172.17.0.1:45342] PHP Notice:  Undefined index: start in /var/www/html/index.php on line 398
+[Tue Apr 19 12:30:28.754720 2022] [:error] [pid 824] [client 172.17.0.1:45342] PHP Notice:  Undefined index: valida in /var/www/html/index.php on line 399
+[Tue Apr 19 18:39:35.069016 2022] [mpm_prefork:notice] [pid 434] AH00169: caught SIGTERM, shutting down
+[Wed Apr 20 13:06:17.378486 2022] [mpm_prefork:notice] [pid 433] AH00163: Apache/2.4.7 (Ubuntu) PHP/5.5.9-1ubuntu4.29 configured -- resuming normal operations
+[Wed Apr 20 13:06:17.378535 2022] [core:notice] [pid 433] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Apr 20 13:07:05.122340 2022] [:error] [pid 693] [client 172.17.0.1:46192] PHP Warning:  mysql_connect(): Access denied for user 'admin'@'localhost' (using password: YES) in /var/www/html/i_dbase.php on line 2
+[Wed Apr 20 13:07:26.162007 2022] [:error] [pid 694] [client 172.17.0.1:46252] PHP Notice:  Undefined index: start in /var/www/html/index.php on line 398
+[Wed Apr 20 13:07:26.162031 2022] [:error] [pid 694] [client 172.17.0.1:46252] PHP Notice:  Undefined index: valida in /var/www/html/index.php on line 399
+[Wed Apr 20 13:11:29.204830 2022] [:error] [pid 699] [client 172.17.0.1:46324] PHP Notice:  Undefined index: start in /var/www/html/index.php on line 398
+[Wed Apr 20 13:11:29.204857 2022] [:error] [pid 699] [client 172.17.0.1:46324] PHP Notice:  Undefined index: valida in /var/www/html/index.php on line 399

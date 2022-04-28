@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+ Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.4" use-changelog="false" last-position="0,0" last-zoom="1" max-obj-count="13"
+	 default-schema="public" default-owner="postgres"
+	 layers="Default layer"
+	 active-layers="0"
+	 layer-name-colors="#000000"
+	 layer-rect-colors="#b4b4b4"
+	 show-layer-names="false" show-layer-rects="false">
+<database name="new_database" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layers="0" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="LOCALIZATION" layers="0" collapse-mode="2" max-obj-count="12" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="20" y="20"/>
+	<column name="ID_POINT" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="X" not-null="true">
+		<type name="float" length="0"/>
+		<comment><![CDATA[X coordinate of the point]]></comment>
+	</column>
+	<column name="Y" not-null="true">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Y coordinate of the point]]></comment>
+	</column>
+	<column name="study_point" not-null="true">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[IS th epoint used in the study]]></comment>
+	</column>
+	<column name="country">
+		<type name="text" length="0"/>
+	</column>
+	<column name="city">
+		<type name="text" length="0"/>
+	</column>
+	<column name="admin_level1">
+		<type name="text" length="0"/>
+	</column>
+	<column name="admin_level2">
+		<type name="text" length="0"/>
+	</column>
+	<column name="admin_level3">
+		<type name="text" length="0"/>
+	</column>
+	<column name="admin_level4">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="Localization_pk" type="pk-constr" table="public.&quot;LOCALIZATION&quot;">
+		<columns names="ID_POINT" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="OBSERVATION" layers="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="500" y="20"/>
+	<column name="ID_OBS" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="date_time" not-null="true">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Date and time of the observation]]></comment>
+	</column>
+	<column name="temperature" not-null="true">
+		<type name="real" length="0"/>
+		<comment><![CDATA[Temperature (°C)]]></comment>
+	</column>
+	<column name="humidy" not-null="true">
+		<type name="real" length="0"/>
+		<comment><![CDATA[Measure %]]></comment>
+	</column>
+	<constraint name="Observation_pk" type="pk-constr" table="public.&quot;OBSERVATION&quot;">
+		<columns names="ID_OBS" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="ID_BACKYARD_BACKYARD" index="4"/>
+		<object name="ID_POINT_LOCALIZATION" index="5"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="BACKYARD_fk" index="1"/>
+		<object name="LOCALIZATION_fk" index="3"/>
+		<object name="OBSERVATION_uq" index="2"/>
+	</customidxs>
+</table>
+
+<relationship name="LOCALIZATION_has_many_OBSERVATION" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#293ff4"
+	 src-table="public.&quot;LOCALIZATION&quot;"
+	 dst-table="public.&quot;OBSERVATION&quot;"
+	 src-required="true" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-3.95411" y="8.93551"/>
+	</label>
+</relationship>
+
+<table name="HOUSING" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1460" y="20"/>
+	<column name="ID_HOUSING" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="nb_animals_house">
+		<type name="smallint" length="0"/>
+		<comment><![CDATA[Number of animals in the house (0->n)]]></comment>
+	</column>
+	<column name="nb_people">
+		<type name="smallint" length="0"/>
+	</column>
+	<constraint name="Housing_pk" type="pk-constr" table="public.&quot;HOUSING&quot;">
+		<columns names="ID_HOUSING" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="BACKYARD" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1460" y="260"/>
+	<column name="ID_BACKYARD" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="plants_3m">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[IS there plants up to 3 meters]]></comment>
+	</column>
+	<column name="garden" not-null="true">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[garden or artifical area]]></comment>
+	</column>
+	<column name="plants">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[Is there plants ?]]></comment>
+	</column>
+	<column name="nb_animals_bcky" not-null="true">
+		<type name="smallint" length="0"/>
+		<comment><![CDATA[Number of animals in the backyard (0->n)]]></comment>
+	</column>
+	<constraint name="BACKYARD_pk" type="pk-constr" table="public.&quot;BACKYARD&quot;">
+		<columns names="ID_BACKYARD" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<relationship name="OBSERVATION_has_one_BACKYARD" type="rel11" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#13c6c2"
+	 src-table="public.&quot;BACKYARD&quot;"
+	 dst-table="public.&quot;OBSERVATION&quot;"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<table name="CONTAINER" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1460" y="460"/>
+	<column name="ID_CONTAINER" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="Inside">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[True if inside
+False if outside]]></comment>
+	</column>
+	<column name="container_type" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="infected" not-null="true">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[Number of type of container]]></comment>
+	</column>
+	<constraint name="CONTAINER_pk" type="pk-constr" table="public.&quot;CONTAINER&quot;">
+		<columns names="ID_CONTAINER" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="ID_OBS_OBSERVATION" index="4"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="OBSERVATION_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="OBSERVATION_has_many_CONTAINER" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#8ab2fc"
+	 src-table="public.&quot;OBSERVATION&quot;"
+	 dst-table="public.&quot;CONTAINER&quot;"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<table name="LARVAE" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="980" y="440"/>
+	<column name="ID_LARVAE" not-null="true">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="genus">
+		<type name="text" length="0"/>
+	</column>
+	<column name="species">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="LARVAE_pk" type="pk-constr" table="public.&quot;LARVAE&quot;">
+		<columns names="ID_LARVAE" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<relationship name="CONTAINER_has_many_LARVAE" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#7ab4db"
+	 src-table="public.&quot;CONTAINER&quot;"
+	 dst-table="public.&quot;LARVAE&quot;"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="39.0447" y="18.08"/>
+	</label>
+</relationship>
+
+<table name="MOSQUITOE_SEQUENCE" layers="0" collapse-mode="2" max-obj-count="8" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="560" y="300"/>
+	<column name="ID_SEQUENCE" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="sequence">
+		<type name="text" length="0"/>
+	</column>
+	<column name="accession" not-null="true">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="gene_name">
+		<type name="text" length="0"/>
+	</column>
+	<column name="haplotype" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="SEQUENCE_pk" type="pk-constr" table="public.&quot;MOSQUITOE_SEQUENCE&quot;">
+		<columns names="ID_SEQUENCE" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="ID_ADULT_ADULT" index="6"/>
+		<object name="ID_LARVAE_LARVAE" index="5"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="ADULT_fk" index="2"/>
+		<object name="LARVAE_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="LARVAE_has_many_SEQUENCE" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#823651"
+	 src-table="public.&quot;LARVAE&quot;"
+	 dst-table="public.&quot;MOSQUITOE_SEQUENCE&quot;"
+	 src-required="false" dst-required="false"/>
+
+<table name="VIRUS" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="200" y="700"/>
+	<column name="ID_VIRUS" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="virus_name">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="VIRUS_pk" type="pk-constr" table="public.&quot;VIRUS&quot;">
+		<columns names="ID_VIRUS" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<relationship name="LARVAE_has_many_VIRUS" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#7252a9"
+	 src-table="public.&quot;LARVAE&quot;"
+	 dst-table="public.&quot;VIRUS&quot;"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-56.4634" y="42.4795"/>
+	</label>
+</relationship>
+
+<table name="VIRUS_SEQUENCE" layers="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="900" y="660"/>
+	<column name="ID_SEQUENCE" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="sequence">
+		<type name="text" length="0"/>
+	</column>
+	<column name="accession" not-null="true">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="gene_name">
+		<type name="text" length="0"/>
+	</column>
+	<column name="haplotype">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="VIRUS_SEQUENCE_pk" type="pk-constr" table="public.&quot;VIRUS_SEQUENCE&quot;">
+		<columns names="ID_SEQUENCE" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="ID_VIRUS_VIRUS" index="5"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="VIRUS_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="VIRUS_has_many_VIRUS_SEQUENCE" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#df6e10"
+	 src-table="public.&quot;VIRUS&quot;"
+	 dst-table="public.&quot;VIRUS_SEQUENCE&quot;"
+	 src-required="false" dst-required="false"/>
+
+<table name="ADULT" layers="0" collapse-mode="2" max-obj-count="8" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="60" y="380"/>
+	<column name="ID_ADULT" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="genus" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="species">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="gender">
+		<type name="text" length="0"/>
+	</column>
+	<column name="inside" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="id_box">
+		<type name="smallint" length="0"/>
+	</column>
+	<constraint name="ADULT_pk" type="pk-constr" table="public.&quot;ADULT&quot;">
+		<columns names="ID_ADULT" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="ID_OBS_OBSERVATION" index="6"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="OBSERVATION_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="OBSERVATION_has_many_ADULT" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#beca5d"
+	 src-table="public.&quot;OBSERVATION&quot;"
+	 dst-table="public.&quot;ADULT&quot;"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="54.1775" y="-8.99299"/>
+	</label>
+</relationship>
+
+<relationship name="ADULT_has_many_MOSQUITOE_SEQUENCE" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#be17e4"
+	 src-table="public.&quot;ADULT&quot;"
+	 dst-table="public.&quot;MOSQUITOE_SEQUENCE&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="ADULT_has_many_VIRUS" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#bbf835"
+	 src-table="public.&quot;ADULT&quot;"
+	 dst-table="public.&quot;VIRUS&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="HOUSING_has_one_OBSERVATION" type="rel11" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#018284"
+	 src-table="public.&quot;OBSERVATION&quot;"
+	 dst-table="public.&quot;HOUSING&quot;"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>
