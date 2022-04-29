@@ -41,3 +41,4 @@ Plusieurs répertoires :
     Des essais d'interface sous Qt, ouvrables avec QT Designer par exemple (https://www.qt.io/). 
 
     Il faut les considérer comme moins qu'un premier jet, à peine comme un brouillon. D'ailleurs, personnellement, j'aurais préféré que l'on fasse cette étape **après avoir terminé la définition de la structure**. Et **d'abord sur papier**, en commençant par un schéma de succesion des formulaires de l'interface, avant même de réfléchir au design même de celle-ci (charue, boeufs, etc). La pratique n'est donc pas du tout académique, et doit être IMHO totalement repensée. 
+    
